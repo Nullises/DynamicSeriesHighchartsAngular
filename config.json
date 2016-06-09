@@ -1,0 +1,6 @@
+{
+  "chartType" : ["column", "column", "column"],
+  "chartTitle": ["Cantidad de equipos", "Cantidad de artículos consumibles", "Cantidad de empleados a cargo"],
+  "yAxisTitle": ["Equipos", "Consumibles", "Empleados"],
+  "dataContent": ["conexion_equipos_basededatos_json.php", "conexion_consumibles_basededatos_json.php", "conexion_basededatos_json.php"]
+}
