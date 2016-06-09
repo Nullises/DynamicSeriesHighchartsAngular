@@ -1,0 +1,23 @@
+Necesitará descargar Angular.js, Jquery, y las librerías Highcharts (tanto el .css como el .js) y Materialize (igual) para poder 
+visualizar el gráfico correctamente.
+
+Además necesitará crear una carpeta llamada "src" en donde guardará todas las librerías mencionadas anteriormente, y los scripts 
+presentes en este repositorio, como lo son directiva, controlador, y todo lo relativo a Angular.js
+
+¿Cómo funciona?
+
+Se trata de un archivo .json llamado "config.json", que contiene la configuración del gráfico. el mismo llama a tres archivos de PHP 
+codificados en Json, y los almacena en un arreglo llamado "dataContent".
+
+En el controlador, a través de "angular.fromJson", se deserializa el Json y lo almacena en una variable. Luego, con el servicio "$http.get", 
+leerá la data de este archivo (se puede especificar cual posición del array "dataContent" llamar). 
+
+Mediante "angular.forEach" se recorrerá el arreglo (JSON) elegido, y almacenará cada nombre o numero en arreglos individuales para 
+usarse como el nombre de la serie y los datos numéricos de la serie.
+
+Luego, en un botón, se almacena una función addSeries, propia de Highcharts, que añadirá series dinámicamente.
+
+Para la visualización dinámica de dichas series se añadieron un par de ciclos. Un for, para recorrer cada indice del array y un while
+para recargar el gráfico y evitar que la data se sobreescriba.
+
+¡Esto es todo!
